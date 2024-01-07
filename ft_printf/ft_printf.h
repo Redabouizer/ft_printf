@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putadresse.c                                    :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 17:37:28 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/01/07 16:45:58 by rbouizer         ###   ########.fr       */
+/*   Created: 2024/01/06 17:37:47 by rbouizer          #+#    #+#             */
+/*   Updated: 2024/01/07 15:35:26 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_putadresse(unsigned long nb)
-{
-	int		cout;
-	char	*base;
+# include <unistd.h>
+# include <stdarg.h>
 
-	base = "0123456789abcdef";
-	cout = 0;
-	if (nb >= 16)
-	{
-		cout += ft_putadresse(nb / 16);
-		cout += ft_putadresse(nb % 16);
-	}
-	else
-		cout += ft_putchar(base[nb]);
-	return (cout);
-}
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putadresse(unsigned long nb);
+int	ft_putnbr_hex(long nb, char x, int len);
+int	ft_printf(const char *format, ...);
+
+#endif

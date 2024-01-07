@@ -1,5 +1,18 @@
-#include "libftprintf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/06 17:37:33 by rbouizer          #+#    #+#             */
+/*   Updated: 2024/01/07 16:46:14 by rbouizer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_putchar(char c){
-    return (write(1,&c,1));
+#include "ft_printf.h"
+
+int	ft_putchar(char c)
+{
+	return (write(1, &c, 1));
 }
